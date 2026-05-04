@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@400;700;900&family=Cinzel+Decorative:wght@400;700;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --app-dark: #141416;
+  --app-navy: #0D1B3E;
+  --app-light: #F0EFEB;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif-logo: "Cinzel", serif;
+  --font-serif-logo-decor: "Cinzel Decorative", serif;
+  
+  --color-amoled: var(--app-dark);
+  --color-navy: var(--app-navy);
+  --color-cream: var(--app-light);
+  --color-linen: var(--app-light);
+}
+
+body {
+  background-color: var(--app-dark);
+  color: var(--app-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Flat UI Classes */
+.flat-border-cream {
+  border: 1px solid var(--app-light);
+}
+
+.flat-bg-cream {
+  background-color: var(--app-light);
+}
+
+.flat-bg-navy {
+  background-color: var(--app-navy);
+}
+
+.flat-text-cream {
+  color: var(--app-light);
+}
+
+.flat-text-navy {
+  color: var(--app-navy);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #112250;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #112250;
+}
+
