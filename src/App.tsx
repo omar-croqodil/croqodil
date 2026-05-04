@@ -291,7 +291,7 @@ interface Message {
 
 export default function App() {
   const [user, setUser] = useState<User | null>(null);
-  const [authReady, setAuthReady] = useState(false);
+  const [authReady, setAuthReady] = useState(true);
   const [messages, setMessages] = useState<Message[]>([]);
   const [history, setHistory] = useState<any[]>([]);
   const [currentChatId, setCurrentChatId] = useState<string | null>(null);
@@ -452,7 +452,7 @@ export default function App() {
     setMessages([{
       id: 'welcome-' + Date.now(),
       role: 'assistant',
-      content: `Hello **${user?.displayName?.split(' ')[0] || 'User'}**, initialization complete. **CROQODIL** is at your disposal. Starting a new session.`,
+      content: `Initialization complete. **CROQODIL** is at your disposal. Starting a new session.`,
       timestamp: new Date(),
     }]);
   };
@@ -1143,17 +1143,6 @@ export default function App() {
     setMessages([]);
   };
 
-  if (!authReady) {
-    return (
-      <div className="h-screen bg-[#141416] flex items-center justify-center">
-        <Loader2 className="w-8 h-8 text-cream animate-spin" />
-      </div>
-    );
-  }
-
-  if (!user) {
-    return <LandingPage />;
-  }
 
   return (
     <div className="flex h-screen bg-[#141416] text-[#F0EFEB] font-sans selection:bg-cream/30 overflow-hidden">
@@ -1194,7 +1183,7 @@ export default function App() {
               <span className={`w-1.5 h-1.5 rounded-full ${apiKey ? 'bg-green-400' : 'bg-red-400'}`} />
               API Key
             </button>
-            <UserProfile user={user} />
+            {/* API Key button only */}
           </div>
         </header>
 
